@@ -11,7 +11,7 @@ import {
   TemplateRef,
   NgZone,
   PLATFORM_ID,
-  inject,
+  inject
 } from '@angular/core'
 
 import {
@@ -19,13 +19,13 @@ import {
   isPlatformBrowser,
   NgForOf,
   NgIf,
-  NgTemplateOutlet,
+  NgTemplateOutlet
 } from '@angular/common'
 
 import {
   calculateAutoPositioning,
   SliderDirective,
-  TextDirective,
+  TextDirective
 } from './helpers'
 
 import { ColorFormats, Cmyk, Hsla, Hsva, Rgba } from './formats'
@@ -33,7 +33,7 @@ import {
   AlphaChannel,
   OutputFormat,
   SliderDimension,
-  SliderPosition,
+  SliderPosition
 } from './helpers'
 
 import { ColorPickerService } from './color-picker.service'
@@ -47,7 +47,7 @@ const SUPPORTS_TOUCH = typeof window !== 'undefined' && 'ontouchstart' in window
   templateUrl: './color-picker.component.html',
   styleUrls: ['./color-picker.component.css'],
   encapsulation: ViewEncapsulation.None,
-  imports: [SliderDirective, TextDirective, NgIf, NgForOf, NgTemplateOutlet],
+  imports: [SliderDirective, TextDirective, NgIf, NgForOf, NgTemplateOutlet]
 })
 export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
   private ngZone = inject(NgZone)
@@ -88,7 +88,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
     ColorFormats.HEX,
     ColorFormats.RGBA,
     ColorFormats.HSLA,
-    ColorFormats.CMYK,
+    ColorFormats.CMYK
   ]
 
   private useRootViewContainer: boolean = false
@@ -463,14 +463,14 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
   public onDragEnd(slider: string): void {
     this.directiveInstance.sliderDragEnd({
       slider: slider,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
   public onDragStart(slider: string): void {
     this.directiveInstance.sliderDragStart({
       slider: slider,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -578,13 +578,13 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
     this.directiveInstance.sliderChanged({
       slider: 'lightness',
       value: this.hsva.v,
-      color: this.outputColor,
+      color: this.outputColor
     })
 
     this.directiveInstance.sliderChanged({
       slider: 'saturation',
       value: this.hsva.s,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -597,7 +597,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
     this.directiveInstance.sliderChanged({
       slider: 'hue',
       value: this.hsva.h,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -609,7 +609,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
     this.directiveInstance.sliderChanged({
       slider: 'value',
       value: this.hsva.v,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -621,7 +621,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
     this.directiveInstance.sliderChanged({
       slider: 'alpha',
       value: this.hsva.a,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -653,7 +653,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
         input: 'hex',
         valid: valid,
         value: value,
-        color: this.outputColor,
+        color: this.outputColor
       })
     }
   }
@@ -677,7 +677,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'red',
       valid: valid,
       value: rgba.r,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -700,7 +700,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'blue',
       valid: valid,
       value: rgba.b,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -723,7 +723,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'green',
       valid: valid,
       value: rgba.g,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -742,7 +742,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'hue',
       valid: valid,
       value: this.hsva.h,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -759,7 +759,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'value',
       valid: valid,
       value: this.hsva.v,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -776,7 +776,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'alpha',
       valid: valid,
       value: this.hsva.a,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -799,7 +799,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'lightness',
       valid: valid,
       value: hsla.l,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -822,7 +822,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'saturation',
       valid: valid,
       value: hsla.s,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -839,7 +839,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'cyan',
       valid: true,
       value: this.cmyk.c,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -856,7 +856,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'magenta',
       valid: true,
       value: this.cmyk.m,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -873,7 +873,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'yellow',
       valid: true,
       value: this.cmyk.y,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -890,7 +890,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       input: 'black',
       valid: true,
       value: this.cmyk.k,
-      color: this.outputColor,
+      color: this.outputColor
     })
   }
 
@@ -1269,7 +1269,7 @@ export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
       top: top + (offset ? this.window.pageYOffset : 0),
       left: left + (offset ? this.window.pageXOffset : 0),
       width: element.offsetWidth,
-      height: element.offsetHeight,
+      height: element.offsetHeight
     }
   }
 }
